@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}
+    Register page
+{% endblock %}
+{% block content %}
+<style>
+    body {
+        background-color: #333;
+        color: white;
+    }
+
+    .custom-form {
+        width: 100%;
+        max-width: 550px; /* Adjusted to a specific pixel value, you can change as needed */
+        margin: auto;
+        padding: 15px;
+        border: 1px solid #555;
+        border-radius: 20px;
+    }
+
+    .custom-input {
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 15px;
+
+    }
+
+    .custom-submit {
+        width: 100%;
+    }
+</style>
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-signin custom-form">
+            {{ form.hidden_tag() }}
+            <img class="mb-4" src="https://res.cloudinary.com/jimshapedcoding/image/upload/v1597332609/android-icon-192x192_ove2a7.png" alt="">
+            <h1 class="h3 mb-3 font-weight-normal">
+                Please Login
+            </h1>
+            <br>
+            {{ form.username.label() }}
+            {{ form.username(class="form-control custom-input", placeholder="User Name") }}
+
+            {{ form.password.label() }}
+            {{ form.password(class="form-control custom-input", placeholder="Password") }}
+
+            <br>
+
+            <div class="checkbox mb-3"> 
+               <h6>Do not have an account?</h6>
+               <a class="btn btn-sm btn-secondary" href="{{ url_for('register_page') }}">Register</a>
+            </div>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-primary custom-submit") }}
+
+        </form>
+    </div>
+</body>
+{% endblock %}

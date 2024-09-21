@@ -1,0 +1,13 @@
+
+    .custom-form {
+         max-width: 400px;
+         margin: auto;
+     }
+ 
+    .custom-input {
+         width: 100%; /* Adjusted to 100% to span the entire width of the container */
+     }
+ 
+     .custom-submit {
+         /* Add any additional styles for the submit button as needed */
+     }

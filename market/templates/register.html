@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}
+    Register page
+{% endblock %}
+{% block content %}
+    <style>
+        body {
+            background-color: #333;
+            color: white;
+        }
+
+        .custom-form {
+            width: 80%;
+            max-width: 550px; /* Adjusted to a specific pixel value, you can change as needed */
+            margin: auto;
+            padding: 15px;
+            border: 1px solid #555;
+            border-radius: 10px;
+        }
+
+        .custom-input {
+            width: 100%;
+            margin-bottom: 10px;
+            border-radius: 15px;
+        }
+
+        .custom-submit {
+            width: 100%;
+        }
+    </style>
+    <body class="text-center">
+        <h1>  </h1>
+        <div class='container'>
+            <form method="POST" class="form-register custom-form">
+                {{ form.hidden_tag() }}
+                <img class="mb-4" src="https://res.cloudinary.com/jimshapedcoding/image/upload/v1597332609/android-icon-192x192_ove2a7.png" alt="">
+                <h1 class="h3 mb-3 font-weight-normal">
+                    Please Create your Account
+                </h1>
+                <br>
+
+                {{ form.username.label() }}
+                {{ form.username(class="form-control custom-input", placeholder="User Name") }}
+
+                {{ form.email_address.label() }}
+                {{ form.email_address(class="form-control custom-input", placeholder="Email Address") }}
+
+                {{ form.password1.label() }}
+                {{ form.password1(class="form-control custom-input", placeholder="Password") }}
+
+                {{ form.password2.label() }}
+                {{ form.password2(class="form-control custom-input", placeholder="Confirm Password") }}
+
+                {{ form.submit(class="btn btn-lg btn-block btn-primary custom-submit") }}
+                <br>
+
+                <div class="checkbox b-3">
+                    <h6>already have an account</h6>
+                    <a class="btn btn-sm btn-secondary" href="{{ url_for('login_page') }}">Login</a>
+                </div>
+            </form>
+        </div>
+    </body>
+{% endblock %}
